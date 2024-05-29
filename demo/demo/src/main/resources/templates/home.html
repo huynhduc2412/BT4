@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <table class="table table-striped table-hover">
+        <thead class="bg-light">
+        <tr>
+            <th>Thoi gian</th>
+            <th>Ten Khoa Hoc</th>
+            <th>Dia Diem</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="course : ${listcourse}">
+            <td th:text="${course.getStartDate()}"></td>
+            <td th:text="${course.getLectureName()}"></td>
+            <td th:text="${course.getPlace()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
